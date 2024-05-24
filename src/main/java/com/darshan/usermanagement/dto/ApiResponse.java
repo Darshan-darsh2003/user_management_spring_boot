@@ -4,14 +4,16 @@ public class ApiResponse<T> {
     private boolean success;
     private String message;
     private T data;
+    private int status;
 
     public ApiResponse() {
     }
 
-    public ApiResponse(boolean success, String message, T data) {
+    public ApiResponse(boolean success, String message, T data, int status) {
         this.success = success;
         this.message = message;
         this.data = data;
+        this.status = status;
     }
 
     public boolean isSuccess() {
@@ -36,5 +38,13 @@ public class ApiResponse<T> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }
